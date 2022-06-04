@@ -7,6 +7,26 @@ body {
   overscroll-behavior-y: none;
 }
 
+a{
+  cursor: pointer;
+  line-height: 2.5em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;  
+  transition: border .2s;  
+}
+a:hover {
+  border-bottom: 1px solid #000000;
+}
+.dark a:hover {
+  border-bottom: 1px solid #FFFFFF;
+}
+.no-underline a:hover {
+  border-bottom: 1px solid transparent;
+}
+a:hover.no-underline {
+  border-bottom: 1px solid transparent;
+}
+
 .has-scroll-smooth {
   position: fixed;
   top: 0;

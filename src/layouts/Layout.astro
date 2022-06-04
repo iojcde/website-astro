@@ -1,18 +1,18 @@
 ---
-    import Footer from "../components/Footer.astro";
-    import Menu from "../components/Menu.astro";
-    import Nav from "../components/Nav.astro";
-    import '../styles/cursor.css'
-    import '../styles/index.css'
+import Footer from "../components/Footer.astro";
+import Menu from "../components/Menu.astro";
+import Nav from "../components/Nav.astro";
+import '../styles/cursor.css'
+import '../styles/index.css'
 
-    export interface Props {
-        title: string,
-        ogURL: string,
-        ogtitle: string,
-        ogdesc: string,
-        ogimg: string
-    }
-    const { title, ogURL, ogtitle, ogdesc, ogimg } = Astro.props as Props;
+export interface Props {
+    title?: string,
+    ogURL?: string,
+    ogtitle?: string,
+    ogdesc?: string,
+    ogimg?: string
+}
+const { title, ogURL, ogtitle, ogdesc, ogimg } = Astro.props as Props;
 
 ---
 
@@ -26,22 +26,24 @@
     <title>{title}</title>
 
     <meta name="description" content={ogdesc}>
+    <link rel="canonical" href={Astro.canonicalURL.href} />
+
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:site_name" content="HKDev Korea" />
+    <meta property="og:site_name" content="Jeeho Ahn - Portfolio" />
     <meta property="og:url" content={ogURL}>
     <meta property="og:type" content="website">
-    <meta property="og:title" content={ogtitle}>
-    <meta property="og:description" content={ogdesc}>
-    <meta property="og:image" content={ogimg}>
+    <meta property="og:title" content={ogtitle || `Jeeho Ahn - Portfolio`}>
+    <meta property="og:description" content={ogdesc||`Student, Full Stack Developer, Open Source enthusaist.`}>
+    <meta property="og:image" content={ogimg||``}>
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="hkdev.xyz">
-    <meta property="twitter:url" content={ogURL}>
-    <meta name="twitter:title" content={ogtitle}>
-    <meta name="twitter:description" content={ogdesc}>
-    <meta name="twitter:image" content={ogimg}>
+    <meta property="twitter:domain" content="jcde.xyz">
+    <meta property="twitter:url" content={Astro.canonicalURL.href}>
+    <meta name="twitter:title" content={ogtitle||"Jeeho Ahn - Portfolio"}>
+    <meta name="twitter:description" {ogdesc||`Student, Full Stack Developer, Open Source enthusaist.`}>
+    <meta name="twitter:image" content={ogimg||''}>
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
     <link rel="preload" as="style" crossorigin
