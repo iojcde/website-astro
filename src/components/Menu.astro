@@ -1,0 +1,52 @@
+---    
+    let open = false;
+---
+
+<div id="menu" class={`fixed top-0 bottom-0 right-0 z-40 w-full bg-white px-4 dark:bg-[#141517] sm:max-w-[50vh]
+    lg:max-w-[30vw] lg:px-8 ${ open ? `active` : `` }`}>
+    <div class="nav-row flex w-1/2 flex-col  gap-8 py-16 text-4xl" data-cursor="-opaque">
+        <a href="/">
+            <a>Home</a>
+        </a>
+
+        <a href="/about">
+            <a>About</a>
+        </a>
+
+        <a href="/blog">
+            <a>Blog</a>
+        </a>
+
+        <a href="/fun">
+            <a>Fun</a>
+        </a>
+    </div>
+    <div
+        class="absolute bottom-4 left-0 right-0 mx-auto flex w-full items-center justify-between px-4 py-8 no-underline lg:px-8 ">
+        <span class="font-mono">Socials &rarr;</span>
+        <div class="flex space-x-6 md:order-2">
+            <a href="https://twitter.com/IoJcde" class="text-gray-600 dark:text-gray-400">
+                <!-- <FaTwitter size="24" /> -->
+            </a>
+
+            <a href="https://github.com/jcdea" class="text-gray-600 dark:text-gray-400">
+                <span class="sr-only">GitHub</span>
+                <!-- <FaGithub size="24" /> -->
+            </a>
+
+            <a href="https://www.aedin.com/in/jcdea/" class="text-gray-600 dark:text-gray-400">
+                <span class="sr-only">aedIn</span>
+                <!-- <FaLinkedin size="24" /> -->
+            </a>
+        </div>
+    </div>
+</div>
+<button onclick="open=true" class="group fixed top-[34px] right-[24px] z-[251] flex items-center justify-end
+    pl-[4.5rem] outline-none
+    sm:top-[40px] sm:right-[24px] lg:top-[54px] lg:right-[54px]" id="burger-container" data-cursor="-menu"
+    data-cursor-stick="#burger">
+    <div id="burger" class="relative w-[25px] space-y-[4px]">
+        <span />
+        <span />
+    </div>
+</button>

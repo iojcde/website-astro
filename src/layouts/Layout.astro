@@ -1,0 +1,134 @@
+---
+    import Footer from "../components/Footer.astro";
+    import Menu from "../components/Menu.astro";
+    import Nav from "../components/Nav.astro";
+    import '../styles/cursor.css'
+    import '../styles/index.css'
+
+    export interface Props {
+        title: string,
+        ogURL: string,
+        ogtitle: string,
+        ogdesc: string,
+        ogimg: string
+    }
+    const { title, ogURL, ogtitle, ogdesc, ogimg } = Astro.props as Props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+
+    <meta name="description" content={ogdesc}>
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:site_name" content="HKDev Korea" />
+    <meta property="og:url" content={ogURL}>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={ogtitle}>
+    <meta property="og:description" content={ogdesc}>
+    <meta property="og:image" content={ogimg}>
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="hkdev.xyz">
+    <meta property="twitter:url" content={ogURL}>
+    <meta name="twitter:title" content={ogtitle}>
+    <meta name="twitter:description" content={ogdesc}>
+    <meta name="twitter:image" content={ogimg}>
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <link rel="preload" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+
+    <script is:inline src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+    <script is:inline src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
+    <script is:inline>
+        // The configured mode is stored in local storage
+        const isDarkMode = localStorage.getItem('darkMode');
+    
+        // Set theme to 'dark' if darkMode = 'true'
+        
+        let theme = isDarkMode === 'true' ? 'dark' : '';
+        if (!isDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches){
+            theme = 'dark'
+        }
+    
+        // Put dark class on html tag to enable dark mode
+        document.querySelector("html").className = theme;
+    
+      </script>
+</head>
+
+
+
+<body>
+    <Menu></Menu>
+    <div data-scroll-container>
+
+        <Nav />
+        <div class=" relative z-10 w-full overflow-clip pb-24 text-black dark:bg-black dark:text-gray-100" id="content">
+            <slot />
+        </div>
+
+        <Footer />
+
+    </div>
+</body>
+
+<script is:inline src="/js/index.js" />
+
+
+</html>
+
+<style lang="postcss">
+    a {
+        cursor: pointer;
+        line-height: 2.5em;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border .2s;
+    }
+
+    a:hover {
+        border-bottom: 1px solid #000000;
+    }
+
+    .dark a:hover {
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+    .no-underline a:hover {
+        border-bottom: 1px solid transparent;
+    }
+
+    a:hover.no-underline {
+        border-bottom: 1px solid transparent;
+    }
+</style>
+
+<script is:inline>
+    if (!window.matchMedia(`(pointer: coarse)`).matches) {
+        MouseFollower.registerGSAP(gsap)
+        document.getElementsByClassName(`mf-cursor`).length == 0 &&
+            new MouseFollower({
+                stateDetection: {
+                    '-pointer': `a,button`,
+                    '-hidden': `iframe`,
+                },
+            })
+    }
+</script>

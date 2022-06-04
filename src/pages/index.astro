@@ -1,13 +1,155 @@
 ---
-
+	import Layout from '../layouts/Layout.astro';
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<Layout title="Jeeho Ahn" ogURL="https://jcde.xyz/" ogtitle="HKDev - 미래로 도약하는 개발자 커뮤니티"
+	ogdesc="HKDev Korea 는 한국 최대 규모의 디스코드 개발자 서버 입니다."
+	ogimg="https://cdn.discordapp.com/banners/645137556777992203/55166d60c93936c8f4f2a22bd0746895.png?size=2048">
+	<main>
+		<div class="h-[90vh]" data-scroll data-scroll-speed="2">
+			<div
+				class="float-right flex h-[90vh] w-full max-w-7xl rounded-sm bg-rose-200 transition duration-100 dark:border-gray-600 dark:bg-black dark:lg:border-y dark:lg:border-l">
+				<div class="mt-24 px-4 pb-8 md:mt-36 lg:mt-40 lg:px-12">
+					<h1 id="hero-text"
+						class="text-6xl font-semibold leading-tight dark:text-white sm:text-7xl xl:text-8xl">
+						Full-stack Developer & Designer based in Seoul.
+					</h1>
+					<h2 class="mt-6 flex font-mono text-xl">
+						Portfolio of Jeeho Ahn{` `}
+						<span
+							class="my-auto ml-4 inline-block h-0 w-20 border-b-2 border-black dark:border-gray-100"></span>
+					</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-section  ">
+			<div class=" mt-16 w-full lg:max-w-5xl mx-auto lg:px-4 p-4 sm:p-8">
+				<h4 class="span-lines animate text-4xl leading-tight lg:text-6xl">
+					I design websites and develop software.
+				</h4>
+
+				<div class="mt-4 max-w-2xl text-lg leading-none lg:text-xl">
+					{` `}
+					<p>
+						I currently volunteer at {` `}
+						<b>
+							<a href="https://fosshost.org">Fosshost</a>
+							{` `}
+						</b>
+						, a non-profit provider of cloud services for the open source
+						community.
+					</p>
+					<p class="mt-4">
+						I&apos;m a Core Developer at{` `}
+						<b>
+							<a href="https://vignetteapp.org">Vignette</a>,
+						</b>
+						{` `}
+						where I help out with <span class="underline">design</span>,
+						<br /> <span class="underline">web development</span>, and
+						{` `}
+						<span class="underline">managing infrastructure</span>.{` `}
+					</p>
+					{` `}
+					<p class="mt-8">
+						I also am a community moderator for the project, which means I help
+						moderate the Vignette
+						{` `}
+						<b>
+							{` `}
+							<a href="https://go.vignetteapp.org/discord">Discord Server</a>
+						</b>
+						{` `}.
+					</p>
+				</div>
+
+				<div class="mt-6 text-lg underline lg:mt-12">
+					<a href="/about">Learn more -&gt; </a>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="my-16  lg:mt-16" data-cursor="-opaque">
+			<div class="scrub-section w-full leading-none">
+				<div class="wrapper flex w-full whitespace-nowrap text-5xl font-semibold sm:text-6xl md:text-9xl">
+					TypeScript • JavaScript • Go • Rust • Python
+				</div>
+			</div>
+			<hr class="my-4 mx-auto  h-2 max-w-7xl border-none bg-black px-4 dark:bg-white lg:px-8" />
+			<div class="scrub-section w-full leading-none">
+				<div class="wrapper  flex whitespace-nowrap text-5xl font-semibold sm:text-6xl md:text-9xl">
+					React • TailwindCSS • Next.js • Linux • Docker • Ansible • GraphQL
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-section mb-16">
+			<div class="wrapper w-full max-w-3xl container">
+				<h2 class="text-5xl leading-tight lg:text-6xl"> Skills</h2>
+				<div class="grid grid-cols-2">
+					<ul class="flex flex-col gap-1 text-xl">
+						<li>Go</li>
+						<li>TypeScript</li>
+						<li>JavaScript</li>
+						<li>Next.js</li>
+						<li>TailiwndCSS</li>
+						<li>React</li>
+					</ul>
+					<ul class="flex flex-col gap-1 text-xl">
+						<li>Rust</li>
+						<li>Python</li>
+						<li>
+							Linux{` `}
+							<span class="text-gray-500 line-through ">
+								(I use arch btw)
+							</span>
+						</li>
+						<li>Docker</li>
+						<li>GraphQL</li>
+						<li>Kubernetes</li>
+						<li>...more</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="designs" class="mt-16">
+			<h2 class="container px-4 text-5xl lg:text-6xl">Designs &darr;</h2>
+			<div id="design-scontainer">
+				<div class="designs-scrub-section mt-8 w-full overflow-x-scroll leading-none md:overflow-hidden">
+					<div data-scroll="" data-scroll-speed="1" data-scroll-direction="horizontal"
+						class="wrapper mx-auto  flex flex-nowrap justify-center gap-4 whitespace-nowrap font-bold">
+						{[
+						`https://owo.whats-th.is/APDfJDz.png`,
+						`https://owo.whats-th.is/5jnX5Vc.png`,
+						`https://owo.whats-th.is/8ULhpLf.png`,
+						].map((v, i) => (
+						<div class="relative aspect-video h-64">
+							<img src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
+								class="h-64 rounded border object-cover object-top transition duration-100 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+						</div>
+						))}
+					</div>
+				</div>
+				<div class="designs-scrub-section mt-4 w-full overflow-scroll leading-none md:overflow-hidden">
+					<div data-scroll="" data-scroll-speed="-1" data-scroll-direction="horizontal"
+						class="wrapper flex flex-nowrap justify-center gap-4 whitespace-nowrap font-bold ">
+						{[
+						`https://owo.whats-th.is/4c2J1EH.png`,
+						`https://owo.whats-th.is/8X4rRPb.png`,
+						`https://owo.whats-th.is/DSsroGt.png`,
+						].map((v, i) => (
+						<div class="relative aspect-video h-64">
+							<img src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
+								class="h-64 rounded border object-cover object-top  transition duration-100 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+						</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
