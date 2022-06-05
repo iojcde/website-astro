@@ -10,9 +10,10 @@ export interface Props {
     ogURL?: string,
     ogtitle?: string,
     ogdesc?: string,
-    ogimg?: string
+    ogimg?: string,
+    noNav?: boolean
 }
-const { title, ogURL, ogtitle, ogdesc, ogimg } = Astro.props as Props;
+const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
 
 ---
 
@@ -81,7 +82,8 @@ const { title, ogURL, ogtitle, ogdesc, ogimg } = Astro.props as Props;
     <Menu></Menu>
     <div data-scroll-container>
 
-        <Nav />
+        {!noNav&&
+        <Nav />}
         <div class=" relative z-10 w-full overflow-clip pb-24 text-black dark:bg-black dark:text-gray-100" id="content">
             <slot />
         </div>

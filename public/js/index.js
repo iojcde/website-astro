@@ -100,8 +100,7 @@ let tl = gsap.timeline({
   scrollTrigger: {
     trigger: triggerElement,
     toggleActions: 'play none none reset',
-    start: "0% 100%",
-    end: "100% 0%"
+    start: "50% 100%",
   }
 });
 tl.from('.span-lines .span-line-inner', {
@@ -111,3 +110,34 @@ tl.from('.span-lines .span-line-inner', {
   duration: 1,
   delay: 0
 });
+
+
+const toggleMenu = () => {
+    const menu = document.querySelector('#menu')
+    const overlay=document.querySelector('#overlay')
+
+    menu.classList.toggle('active')
+    overlay.classList.toggle('active')
+}
+
+const button = document.getElementById("nav-button")
+const overlay = document.getElementById("overlay")
+button.onclick = toggleMenu
+overlay.onclick = toggleMenu
+
+const toggleTheme=()=>{
+  const isDarkMode = localStorage.getItem('darkMode');
+ 
+  if (isDarkMode=='true'){
+     localStorage.setItem('darkMode', 'false');
+  }else{
+    
+    localStorage.setItem('darkMode', 'true');
+    
+  }
+  
+  document.querySelector("html").classList.toggle('dark');
+
+}
+const themeButton = document.getElementById("theme-button")
+themeButton.onclick = toggleTheme

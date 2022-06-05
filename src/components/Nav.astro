@@ -1,16 +1,29 @@
+---
+import { HiMoon, HiSun } from 'react-icons/hi/index.esm';
+---
+
 <a href="#content"
     class="text-md absolute -top-8 ml-3 -translate-y-12 transform rounded-md border border-gray-300  px-3 py-1 transition-transform duration-100 focus:translate-y-12 lg:ml-8">
     Skip to content
 </a>
 <nav class=" my-0 flex w-full items-center justify-center py-4 px-4 transition duration-100 lg:px-14">
-    <div class="flex w-full  items-center justify-between">
+    <div class="flex w-full items-baseline justify-between">
         <div id="name" class="relative text-xl text-black dark:text-gray-100 sm:text-2xl lg:text-4xl"
             data-cursor="-opaque">
             <a href="/">Jeeho Ahn</a>
         </div>
         <div class="text-primary flex items-center justify-evenly space-x-3 pr-12 dark:text-gray-100 lg:space-x-4">
 
-            <!-- <Toggle /> -->
+            <button aria-label="Toggle Dark Mode" id="theme-button" type="button" class="h-8 w-8 rounded-md "
+                aria-hidden>
+                <span class="dark:block  hidden">
+                    <HiSun size="20" color="white" />
+                </span>
+                <span class="dark:hidden block">
+                    <HiMoon size="20" />
+                </span>
+
+            </button>
             <span class="hidden sm:block">Menu</span>
         </div>
     </div>
