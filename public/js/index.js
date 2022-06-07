@@ -112,6 +112,18 @@ tl.from('.span-lines .span-line-inner', {
 });
 
 
+const toggleMenu = () => {
+    const menu = document.querySelector('#menu')
+    const overlay=document.querySelector('#overlay')
+
+    menu.classList.toggle('active')
+    overlay.classList.toggle('active')
+}
+
+const button = document.getElementById("nav-button")
+const overlay = document.getElementById("overlay")
+button.onclick = toggleMenu
+overlay.onclick = toggleMenu
 
 const toggleTheme=()=>{
   const isDarkMode = localStorage.getItem('darkMode');
