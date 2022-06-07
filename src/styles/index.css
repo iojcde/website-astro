@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white dark:bg-black transition duration-200 dark:text-gray-100;
+  @apply bg-white dark:bg-black  transition duration-200  dark:text-gray-100;
 
   overscroll-behavior-y: none;
 }
@@ -22,7 +22,6 @@ body {
 
 a{
   cursor: pointer;
-  line-height: 2.5em;
   text-decoration: none;
   border-bottom: 1px solid transparent;  
   transition: border .2s;  
@@ -55,20 +54,13 @@ a.no-underline:hover {
   left: 0;
 }
 
-
 .hero-gradient{
   background-size: cover;
-  background-position: center;
-  background-image: url('/images/hero-light.svg');
+  background-position: 60% 20%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 3000 2000' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='grad0' cx='86%25' cy='90%25' r='100%25' fx='86%25' fy='90%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(244,102,102,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(244,102,102,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad1' cx='63%25' cy='84%25' r='100%25' fx='63%25' fy='84%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(74,111,247,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(74,111,247,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad2' cx='35%25' cy='57%25' r='100%25' fx='35%25' fy='57%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(11,249,225,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(11,249,225,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad3' cx='7%25' cy='86%25' r='100%25' fx='7%25' fy='86%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(103,244,201,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(103,244,201,0)' stop-opacity='0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='3000' height='2000' fill='none' /%3E%3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad0)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad1)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad2)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad3)' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
-.footer-gradient{
-  background-size: cover;
-  background-position: top;
-  background-image: url('/images/hero-dark.svg');
-  background-repeat: no-repeat;
-}
 
 .span-lines.animate .span-line .span-line-inner {
   position: relative;
@@ -93,12 +85,11 @@ a.no-underline:hover {
   width: 25px;
   line-height: 25px;
   vertical-align: middle;
-  -webkit-transition: color 0.2s;
-  -o-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  transition: color 0.2s;
+  -webkit-transition: color .2s;
+  -o-transition: color .2s;
+  -moz-transition: color .2s;
+  transition: color .2s;
 }
-
 #burger span {
   position: relative;
   display: block;
@@ -106,11 +97,10 @@ a.no-underline:hover {
   height: 2px;
   margin: 5px 0;
   top: 0;
-  @apply bg-black transition duration-200 dark:bg-white group-hover:lg:bg-white dark:lg:group-hover:bg-black;
+  @apply bg-black transition duration-200 dark:bg-white group-hover:bg-white dark:group-hover:bg-black;
 }
-
 #burger span.burger-dark {
-  @apply bg-white transition duration-200 dark:bg-black group-hover:lg:bg-white dark:lg:group-hover:bg-black;
+  @apply bg-white transition duration-200 dark:bg-white group-hover:bg-white dark:group-hover:bg-black;
 }
 
 #burger:before {
@@ -130,7 +120,7 @@ a.no-underline:hover {
   height: 100vh;
   z-index: 100;
   transform: translate(calc(100% + 6vw), 0) rotate(0.001deg);
-  transition: transform 0.8s cubic-bezier(0.7, 0, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.7, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -166,7 +156,8 @@ a.no-underline:hover {
 }
 
 .round-button{
-  @apply no-underline shadow justify-center rounded-full h-32 w-32 transition duration-300 bg-teal-300 flex items-center p-2;
+  background: linear-gradient(120deg, #00C9FF 0%, #92FE9D 100%);
+  @apply no-underline shadow justify-center rounded-full h-32 w-32 transition duration-300 flex items-center p-2;
 }
 
 .round-button:hover{
@@ -174,4 +165,22 @@ a.no-underline:hover {
 -moz-transform: scale(1.2);
 -o-transform: scale(1.2);
 transform: scale(1.2);
+}
+
+#nav-button {
+  display: inline-block;
+  background: 0 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  outline: 0!important;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  text-indent: inherit;
+  text-decoration: none;
 }

@@ -84,7 +84,8 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
 
         {!noNav&&
         <Nav />}
-        <div class=" relative z-10 w-full overflow-clip pb-24 text-black dark:bg-black dark:text-gray-100" id="content">
+        <div class=" relative z-10 w-full overflow-clip  transition duration-200  pb-24 dark:text-gray-100"
+            id="content">
             <slot />
         </div>
 

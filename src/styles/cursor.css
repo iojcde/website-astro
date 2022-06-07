@@ -24,6 +24,10 @@
 .mf-cursor.-inverse::before {
   @apply text-white dark:text-black;
 }
+
+.mf-cursor.-footer::before {
+  @apply text-white;
+}
 @supports (mix-blend-mode: exclusion) {
   .mf-cursor.-exclusion {
     mix-blend-mode: exclusion;

@@ -5,22 +5,22 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<main>
-		<div class="hero-gradient h-[90vh]" data-scroll data-scroll-speed="1">
-			<div class="float-right flex h-[90vh] w-full max-w-7xl rounded-sm transition duration-200">
-				<div class="mt-24 px-4 pb-8 lg:px-12">
+		<div class="hero-gradient h-[90vh] flex flex-col justify-between" data-scroll data-scroll-speed="1">
+			<div class="float-right flex  w-full max-w-7xl rounded-sm">
+				<div class="   mt-12 sm:mt-32 px-4  pb-8 lg:px-20">
 					<h1 id="hero-text" class="text-6xl leading-tight dark:text-white sm:text-7xl xl:text-8xl">Full-stack Developer
 						& Designer based in Seoul.</h1>
-					<h2 class="mt-6 flex font-mono text-xl">
+					<h2 class="mt-6 flex font-mono text-">
 						Portfolio of Jeeho Ahn{` `}
-						<span class="my-auto ml-4 inline-block h-0 w-20 border-b-2 border-black dark:border-gray-100"></span>
+						<span
+							class="my-auto ml-4 inline-block h-0 w-20  transition duration-200 border-b-2 border-black dark:border-gray-100"></span>
 					</h2>
 				</div>
 			</div>
 		</div>
 
-		<h3 class="mt-8 mb-16 text-center text-3xl" data-scroll data-scroll-speed="2">Let's go! &darr;</h3>
 
-		<div class="relative mx-auto mt-16 w-full p-4 sm:p-8 lg:max-w-5xl lg:px-4">
+		<div class="relative mx-auto mt-16 w-full p-4 container lg:px-4 pb-36 sm:pb-36 lg:pb-16">
 			<h4 class="span-lines animate text-4xl leading-tight lg:text-6xl">I design websites and develop software.</h4>
 
 			<div class="mt-4 max-w-2xl text-lg leading-none lg:text-xl">
@@ -50,23 +50,23 @@ import Layout from '../layouts/Layout.astro';
 					{` `}.
 				</p>
 			</div>
-			<RoundButton class="absolute bottom-4 right-16" href="/about">About me </RoundButton>
+			<RoundButton class="absolute bottom-4 right-16 sm:right-32" href="/about">Learn more </RoundButton>
 		</div>
 
-		<div class="my-16 lg:mt-16" data-cursor="-opaque">
+		<div class="my-16 lg:mt-32" data-cursor="-opaque">
 			<div class="scrub-section w-full leading-none">
 				<div class="wrapper flex w-full whitespace-nowrap text-5xl font-medium sm:text-6xl md:text-9xl">TypeScript •
 					JavaScript • Go • Rust • Python</div>
 			</div>
-			<hr class="my-4 mx-auto h-2 max-w-7xl border-none bg-red-200 px-4 font-medium dark:bg-white lg:px-8" />
+			<hr class="my-4 mx-auto h-2 max-w-7xl border-none bg-black px-4 font-medium dark:bg-white lg:px-8" />
 			<div class="scrub-section w-full leading-none">
 				<div class="wrapper flex whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS • Next.js •
 					Linux • Docker • Ansible • GraphQL</div>
 			</div>
 		</div>
 
-		<div class="slide-section my-32">
-			<div class="wrapper container w-full max-w-3xl">
+		<div class="slide-section mb-16">
+			<div class="wrapper container w-full max-w-5xl">
 				<h2 class="text-5xl leading-tight lg:text-6xl">Skills</h2>
 				<div class="grid grid-cols-2">
 					<ul class="flex flex-col gap-1 text-xl">
@@ -93,32 +93,29 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<div id="designs" class="mt-16">
+		<div id="designs" class="mt-16 lg:mt-32 w-full">
 			<h2 class="container px-4 text-5xl lg:text-6xl">Designs &darr;</h2>
-			<div id="design-scontainer">
-				<div class="designs-scrub-section mt-8 w-full overflow-x-scroll leading-none md:overflow-hidden">
-					<div data-scroll="" data-scroll-speed="1" data-scroll-direction="horizontal"
-						class="wrapper mx-auto flex flex-nowrap justify-center gap-4 whitespace-nowrap font-bold">
-						{[ `https://owo.whats-th.is/APDfJDz.png`, `https://owo.whats-th.is/5jnX5Vc.png`,
-						`https://owo.whats-th.is/8ULhpLf.png`, ].map((v, i) => (
-						<div class="relative aspect-video h-64">
-							<img src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
-								class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
-						</div>
-						))}
+
+			<div class="mt-8 w-full overflow-x-scroll leading-none sm:overflow-hidden px-4">
+				<div data-scroll data-scroll-speed="1" data-scroll-direction="horizontal" class="flex gap-4 sm:justify-center">
+					{[ `https://owo.whats-th.is/APDfJDz.png`, `https://owo.whats-th.is/5jnX5Vc.png`,
+					`https://owo.whats-th.is/8ULhpLf.png`, ].map((v, i) => (
+					<div class="relative aspect-video h-64">
+						<img src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
+							class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
 					</div>
+					))}
 				</div>
-				<div class="designs-scrub-section mt-4 w-full overflow-scroll leading-none md:overflow-hidden">
-					<div data-scroll="" data-scroll-speed="-1" data-scroll-direction="horizontal"
-						class="wrapper flex flex-nowrap justify-center gap-4 whitespace-nowrap font-bold">
-						{[ `https://owo.whats-th.is/4c2J1EH.png`, `https://owo.whats-th.is/8X4rRPb.png`,
-						`https://owo.whats-th.is/DSsroGt.png`, ].map((v, i) => (
-						<div class="relative aspect-video h-64">
-							<img src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
-								class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
-						</div>
-						))}
+			</div>
+			<div class="mt-4 w-full overflow-scroll leading-none sm:overflow-hidden px-4">
+				<div data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" class="flex gap-4 sm:justify-center">
+					{[ `https://owo.whats-th.is/4c2J1EH.png`, `https://owo.whats-th.is/8X4rRPb.png`,
+					`https://owo.whats-th.is/DSsroGt.png`, ].map((v, i) => (
+					<div class="relative aspect-video h-64">
+						<img src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
+							class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
 					</div>
+					))}
 				</div>
 			</div>
 		</div>
