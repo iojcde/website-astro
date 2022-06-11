@@ -1,19 +1,19 @@
 ---
-import Footer from "../components/Footer.astro";
-import Menu from "../components/Menu.astro";
-import Nav from "../components/Nav.astro";
-import '../styles/cursor.css'
-import '../styles/index.css'
+    import Footer from "../components/Footer.astro";
+    import Menu from "../components/Menu.astro";
+    import Nav from "../components/Nav.astro";
+    import '../styles/cursor.css'
+    import '../styles/index.css'
 
-export interface Props {
-    title?: string,
-    ogURL?: string,
-    ogtitle?: string,
-    ogdesc?: string,
-    ogimg?: string,
-    noNav?: boolean
-}
-const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
+    export interface Props {
+        title?: string,
+        ogURL?: string,
+        ogtitle?: string,
+        ogdesc?: string,
+        ogimg?: string,
+        noNav?: boolean
+    }
+    const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
 
 ---
 
@@ -52,28 +52,28 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
-    <script is:inline src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
-    <script is:inline src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.js"></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> -->
+    <!-- <script is:inline src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script> -->
+    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.js"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
 
     <script is:inline>
         // The configured mode is stored in local storage
         const isDarkMode = localStorage.getItem('darkMode');
-    
+
         // Set theme to 'dark' if darkMode = 'true'
-        
+
         let theme = isDarkMode === 'true' ? 'dark' : '';
-        if (!isDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches){
+        if (!isDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches) {
             theme = 'dark'
         }
-    
+
         // Put dark class on html tag to enable dark mode
         document.querySelector("html").className = theme;
-    
-      </script>
+
+    </script>
 </head>
 
 
@@ -94,7 +94,7 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
     </div>
 </body>
 
-<script is:inline src="/js/index.js" />
+<script src="/src/scripts/index.js" />
 
 
 </html>
@@ -124,16 +124,3 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
         border-bottom: 1px solid transparent;
     }
 </style>
-
-<script is:inline>
-    if (!window.matchMedia(`(pointer: coarse)`).matches) {
-        MouseFollower.registerGSAP(gsap)
-        document.getElementsByClassName(`mf-cursor`).length == 0 &&
-            new MouseFollower({
-                stateDetection: {
-                    '-pointer': `a,button`,
-                    '-hidden': `iframe`,
-                },
-            })
-    }
-</script>
