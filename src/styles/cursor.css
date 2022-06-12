@@ -9,7 +9,7 @@
   transition: opacity 0.3s, color 0.4s;
 }
 .mf-cursor:before {
-  content: "";
+  content: '';
   position: absolute;
   top: -24px;
   left: -24px;

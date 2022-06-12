@@ -1,14 +1,20 @@
 ---
 export interface Props {
-  href: string;
-  class?: string;
+  href: string
+  class?: string
 }
 
-const { href, class: className } = Astro.props as Props;
+const { href, class: className } = Astro.props as Props
 ---
 
-<div data-scroll data-scroll-speed="2" class={className?className:''}>
-  <a href={href} class='no-underline round-button text-black'>
-    <slot />
+<div
+  data-scroll
+  data-scroll-speed="2"
+  class={className ? className : '' + ' round-button-container'}
+>
+  <a {href} class="no-underline round-button text-black">
+    <span class="round-button-text">
+      <slot />
+    </span>
   </a>
 </div>

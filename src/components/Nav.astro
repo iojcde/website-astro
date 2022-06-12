@@ -1,29 +1,40 @@
 ---
-import { HiMoon, HiSun } from 'react-icons/hi/index.esm';
+import { HiMoon, HiSun } from 'react-icons/hi/index.esm'
 ---
 
-<a href="#content"
-    class="text-md absolute -top-8 ml-3 -translate-y-12 transform rounded-md border border-gray-300 px-3 py-1 transition-transform duration-200 focus:translate-y-12 lg:ml-8">
-    Skip to content
+<a
+  href="#content"
+  class="text-md absolute -top-8 ml-3 -translate-y-12 transform rounded-md border border-gray-300 px-3 py-1 transition-transform duration-200 focus:translate-y-12 lg:ml-8"
+>
+  Skip to content
 </a>
-<nav class="my-0 flex w-full items-center justify-center py-4 sm:pb-6 sm:pt-8 px-4 transition duration-200 lg:px-14">
-    <div class="flex w-full items-baseline justify-between">
-        <div id="name" class="relative text-xl text-black dark:text-gray-100 sm:text-2xl lg:text-4xl"
-            data-cursor="-opaque">
-            <a href="/">Jeeho Ahn</a>
-        </div>
-        <div class="text-primary flex items-baseline pr-14  dark:text-gray-100 sm:space-x-5">
-
-            <button aria-label="Toggle Dark Mode" id="theme-button" type="button" class=" p-2 rounded-md translate-y-1"
-                aria-hidden>
-                <!-- <span class="dark:flex  hidden">
+<nav
+  class="my-0 flex w-full items-center justify-center py-4 sm:pb-6 sm:pt-8 px-4 transition duration-200 lg:px-14"
+>
+  <div class="flex w-full items-baseline justify-between">
+    <div
+      id="name"
+      class="relative text-xl text-black dark:text-gray-100 sm:text-2xl lg:text-4xl"
+      data-cursor="-opaque"
+    >
+      <a href="/">Jeeho Ahn</a>
+    </div>
+    <div
+      class="text-primary flex items-baseline pr-14  dark:text-gray-100 sm:space-x-5"
+    >
+      <button
+        aria-label="Toggle Dark Mode"
+        id="theme-button"
+        type="button"
+        class=" p-2 rounded-md translate-y-1"
+        aria-hidden
+      >
+        <!-- <span class="dark:flex  hidden">
                     <HiSun size="20" color="white" />
                 </span> -->
-                <HiMoon size="20" />
-
-
-            </button>
-            <span class="sm:block hidden">Menu</span>
-        </div>
+        <HiMoon size="20" />
+      </button>
+      <span class="sm:block hidden">Menu</span>
     </div>
+  </div>
 </nav>

@@ -1,21 +1,23 @@
 ---
-    import Footer from "../components/Footer.astro";
-    import Menu from "../components/Menu.astro";
-    import Nav from "../components/Nav.astro";
-    import '../styles/cursor.css'
-    import '../styles/index.css'
+import Footer from "../components/Footer.astro";
+import Menu from "../components/Menu.astro";
+import Nav from "../components/Nav.astro";
+import '../styles/cursor.css'
+import '../styles/index.css'
 
-    export interface Props {
-        title?: string,
-        ogURL?: string,
-        ogtitle?: string,
-        ogdesc?: string,
-        ogimg?: string,
-        noNav?: boolean
-    }
-    const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
+export interface Props {
+    title?: string,
+    ogURL?: string,
+    ogtitle?: string,
+    ogdesc?: string,
+    ogimg?: string,
+    noNav?: boolean
+}
+const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
 
 ---
+
+<script src="/src/scripts/main.ts" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -93,8 +95,6 @@
 
     </div>
 </body>
-
-<script src="/src/scripts/index.js" />
 
 
 </html>

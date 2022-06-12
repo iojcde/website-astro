@@ -16,14 +16,17 @@
     "astro": "^1.0.0-beta.31",
     "autoprefixer": "^10.4.7",
     "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.2",
+    "prettier-plugin-astro": "^0.0.12",
     "prettier-plugin-tailwindcss": "^0.1.11",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
   "dependencies": {
-    "eslint-config-prettier": "^8.5.0",
     "gsap": "^3.10.4",
     "locomotive-scroll": "^4.1.4",
     "mouse-follower": "^1.1.2",
