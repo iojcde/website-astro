@@ -71,7 +71,6 @@ export default class Magnetic {
     gsap.to(this.el, {
       y: y,
       x: x,
-      force3D: true,
       overwrite: true,
       duration: speed,
     })

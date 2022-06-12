@@ -12,9 +12,9 @@ const { href, class: className } = Astro.props as Props
   data-scroll-speed="2"
   class={className ? className : '' + ' round-button-container'}
 >
-  <a {href} class="no-underline round-button text-black">
-    <span class="round-button-text">
+  <a {href} class="no-underline round-button relative text-black">
+    <div class="round-button-text">
       <slot />
-    </span>
+    </div>
   </a>
 </div>

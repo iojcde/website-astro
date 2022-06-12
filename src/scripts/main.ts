@@ -37,7 +37,7 @@ gsap.utils
         y: 0,
         scrollTrigger: { trigger: section, start: `top 90%` },
         stagger: 0.08,
-        duration: 0.8,
+        duration: 0.6,
         delay: 0.2,
         ease: `power2.out`,
       },

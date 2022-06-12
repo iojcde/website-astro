@@ -1,12 +1,18 @@
+::selection {
+  @apply bg-[#141517] text-white dark:bg-white dark:text-black;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white overflow-hidden transition duration-200  dark:bg-black dark:text-gray-100;
+  @apply bg-white overflow-x-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
 }
+
 .has-scroll-smooth div[data-scroll-container] {
   overflow-y: hidden !important;
 }
+
 #overlay {
   background: black;
   opacity: 0;
@@ -90,6 +96,7 @@ a.no-underline:hover {
   -moz-transition: color 0.2s;
   transition: color 0.2s;
 }
+
 #burger span {
   position: relative;
   display: block;
@@ -97,10 +104,10 @@ a.no-underline:hover {
   height: 2px;
   margin: 5px 0;
   top: 0;
-  @apply bg-black transition duration-200 group-hover:bg-white dark:bg-white dark:group-hover:bg-black;
+  @apply bg-black transition duration-200 lg:group-hover:bg-white dark:bg-white lg:dark:group-hover:bg-black;
 }
 #burger span.burger-dark {
-  @apply bg-white transition duration-200 group-hover:bg-white dark:bg-white dark:group-hover:bg-black;
+  @apply bg-white transition duration-200 lg:group-hover:bg-white dark:bg-white lg:dark:group-hover:bg-black;
 }
 
 #burger:before {
@@ -160,14 +167,14 @@ a.no-underline:hover {
   @apply flex h-40 w-40 items-center justify-center rounded-full p-2 text-lg no-underline shadow transition duration-300;
 }
 
-.round-button-text:before {
+.round-button-text::before {
   content: '';
   display: block;
   position: absolute;
-  top: -20px;
-  right: -20px;
-  left: -20px;
-  bottom: -20px;
+  top: -4.2rem;
+  right: -40px;
+  left: -40px;
+  bottom: -4.2rem;
 }
 
 .round-button:hover {
