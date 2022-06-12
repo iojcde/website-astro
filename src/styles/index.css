@@ -2,7 +2,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white  transition duration-200  dark:bg-black dark:text-gray-100;
+  @apply bg-white overflow-x-hidden transition duration-200  dark:bg-black dark:text-gray-100;
 }
 .has-scroll-smooth div[data-scroll-container] {
   overflow-y: hidden !important;
