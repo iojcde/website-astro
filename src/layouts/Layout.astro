@@ -4,6 +4,7 @@ import Menu from "../components/Menu.astro";
 import Nav from "../components/Nav.astro";
 import '../styles/cursor.css'
 import '../styles/index.css'
+import '../styles/locomotive.css'
 
 export interface Props {
     title?: string,
@@ -54,12 +55,7 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
-    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script> -->
-    <!-- <script is:inline src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script> -->
-    <!-- <script is:inline src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.js"></script> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+        
 
     <script is:inline>
         // The configured mode is stored in local storage
