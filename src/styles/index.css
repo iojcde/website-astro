@@ -6,7 +6,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white overflow-x-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
+  @apply bg-white overflow-scroll pc:overflow-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
 }
 
 .has-scroll-smooth div[data-scroll-container] {
@@ -22,7 +22,7 @@ body {
   will-change: opacity;
 }
 
-#overlay.active {
+.menu-open #overlay {
   opacity: 0.2;
   pointer-events: all;
 }
@@ -104,10 +104,29 @@ a.no-underline:hover {
   height: 2px;
   margin: 5px 0;
   top: 0;
-  @apply bg-black transition duration-200 lg:group-hover:bg-white dark:bg-white lg:dark:group-hover:bg-black;
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.2, 1), border 0.2s !important;
+  @apply bg-black transition sm:group-hover:bg-white dark:bg-white sm:dark:group-hover:bg-black;
 }
 #burger span.burger-dark {
-  @apply bg-white transition duration-200 lg:group-hover:bg-white dark:bg-white lg:dark:group-hover:bg-black;
+  @apply bg-white transition sm:group-hover:bg-white dark:bg-white sm:dark:group-hover:bg-black;
+}
+
+@media (hover: hover) {
+  #burger:hover span:nth-child(1){
+    transform:translateX(-4px);
+  }
+
+
+  #burger:hover span:nth-child(2){
+    transform:translateX(4px);
+  }
+}
+
+.menu-open #burger span:nth-child(1){
+  transform:  translateY(4px) rotate(45deg); 
+}
+.menu-open #burger span:nth-child(2){
+  transform: translateY(-4px) rotate(-45deg);
 }
 
 #burger:before {
@@ -118,6 +137,16 @@ a.no-underline:hover {
   right: -20px;
   left: -20px;
   bottom: -20px;
+}
+
+#burger:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
 }
 
 #menu {
@@ -131,7 +160,7 @@ a.no-underline:hover {
   will-change: transform;
 }
 
-#menu.active {
+.menu-open #menu {
   transform: translate(0, 0) rotate(0.001deg);
 }
 
@@ -142,7 +171,7 @@ a.no-underline:hover {
   @apply leading-tight;
 }
 
-#menu.active .nav-row a {
+.menu-open #menu .nav-row a {
   transform: translate(0, 0) rotate(0.001deg);
 }
 
@@ -204,4 +233,16 @@ a.no-underline:hover {
 
 .seperator {
   @apply mx-auto mt-16 max-w-6xl border-gray-700 dark:border-gray-300;
+}
+
+.apply-prose {
+  @apply prose lg:prose-lg dark:prose-invert;
+}
+
+.prose img{
+  @apply rounded-lg;
+}
+
+.prose a{
+  text-decoration: none;
 }

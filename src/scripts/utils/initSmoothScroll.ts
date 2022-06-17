@@ -3,10 +3,13 @@ import LocomotiveScroll from 'locomotive-scroll'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
+
 const initSmoothScroll = () => {
   const scroll = new LocomotiveScroll({
     el: document.querySelector(`[data-scroll-container]`),
     smooth: true,
+    reloadOnContextChange: true,
+    tablet: { smooth: true },
   })
 
   window.onresize = scroll.update()
@@ -54,5 +57,7 @@ const initSmoothScroll = () => {
 
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh()
+
+  return scroll
 }
 export default initSmoothScroll

@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 module.exports = {
   darkMode: 'class',
@@ -7,6 +8,10 @@ module.exports = {
       center: true,
     },
     extend: {
+      screens: {
+        mobile: { raw: '(pointer: course)' },
+        pc: { raw: '(pointer:fine)' },
+      },
       colors: {
         orange: colors.orange,
         blueGray: colors.slate,
@@ -67,8 +72,11 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   corePlugins: {
     container: false,
+  },
+  future: {
+    hoverOnlyWhenSupported: true,
   },
 }

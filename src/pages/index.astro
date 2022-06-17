@@ -3,13 +3,13 @@ import RoundButton from '../components/RoundButton.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<script src="/src/scripts/index.ts" />
+<script type="module" src="/src/scripts/index.ts" />
 
 <Layout>
 	<main>
-		<div class="hero-gradient px-6 h-[90vh] flex flex-col justify-between">
+		<div class="hero-gradient px-4 sm:px-10 h-[90vh] flex flex-col justify-between">
 			<div class="float-right flex  w-full max-w-7xl rounded-sm">
-				<div class="   mt-12 sm:mt-32 px-4  pb-8 lg:px-20">
+				<div class="mt-12 sm:mt-32   pb-8 lg:px-20">
 					<h1 id="hero-text" class="text-6xl leading-tight dark:text-white sm:text-7xl xl:text-8xl">Full-stack
 						Developer
 						& Designer based in Seoul.</h1>
@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 
-		<div id="details" class="relative text-5xl z-20 mx-auto mt-20 w-full container pb-64 fade-in-section">
+		<div id="details" class="relative text-3xl md:text-5xl z-20 mx-auto mt-20 w-full container pb-64 fade-in-section">
 			<div class="fade-in">I'm a developer skilled in Go, React, and more.</div>
 			<div class="fade-in">I'm also a designer who specializes in web design </div>
 			<div class="fade-in">and UI/UX.</div>
@@ -64,8 +64,8 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 
-		<div id="skills-container" class="relative fade-in-section z-0 my-32 py-16 text-white bg-[#141517] dark:bg-black " data-scroll data-scroll-speed="1"
-			data-cursor="-opaque">
+		<div id="skills-container" class="relative fade-in-section z-0 my-32 py-16 text-white bg-[#141517] dark:bg-black "
+			data-scroll data-scroll-speed="1" data-cursor="-opaque">
 			<h2 class="text-5xl fade-in container leading-tight lg:text-6xl">Skills</h2>
 
 			<div class="scrub-section fade-in w-full leading-none mt-8">
@@ -74,12 +74,12 @@ import Layout from '../layouts/Layout.astro';
 					JavaScript • Go • Rust • Python</div>
 			</div>
 			<!-- <hr class="my-4 mx-auto h-1 max-w-6xl border-none bg-black px-4 font-medium dark:bg-white lg:px-8" /> -->
-			<div class="scrub-section w-full leading-none">
+			<div class="scrub-section fade-in w-full leading-none">
 				<div class="wrapper flex whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
 					Next.js •
 					Linux • Docker • Ansible • GraphQL</div>
 			</div>
-			<div class="grid fade-in grid-cols-2 container mt-16">
+			<div class="grid fade-in sm:grid-cols-2 container mt-16">
 				<ul class="flex flex-col gap-1 text-xl">
 					<li>Go</li>
 					<li>TypeScript</li>
@@ -112,26 +112,24 @@ import Layout from '../layouts/Layout.astro';
 		<div id="designs" class="mt-16 fade-in-section lg:mt-32 px-6 w-full">
 			<h2 class="container px-4 text-5xl lg:text-6xl fade-in">Designs &darr;</h2>
 
-			<div class="mt-8 w-full overflow-x-scroll leading-none sm:overflow-hidden px-4">
-				<div data-scroll data-scroll-speed="1" data-scroll-direction="horizontal"
-					class="flex fade-in gap-4 sm:justify-center">
+			<div class="mt-8 w-full  fade-in overflow-x-scroll leading-none sm:overflow-hidden px-4">
+				<div data-scroll data-scroll-speed="1" data-scroll-direction="horizontal" class="flex gap-4 sm:justify-center">
 					{[ `https://owo.whats-th.is/APDfJDz.png`, `https://owo.whats-th.is/5jnX5Vc.png`,
 					`https://owo.whats-th.is/8ULhpLf.png`, ].map((v, i) => (
-					<div class="relative aspect-video h-64">
+					<div class="relative aspect-video h-40 sm:h-64">
 						<img src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
-							class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+							class="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100" />
 					</div>
 					))}
 				</div>
 			</div>
-			<div class="mt-4 w-full overflow-scroll leading-none sm:overflow-hidden px-4">
-				<div data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal"
-					class="flex fade-in gap-4 sm:justify-center">
+			<div class="mt-4 w-full overflow-scroll fade-in leading-none sm:overflow-hidden px-4">
+				<div data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal" class="flex gap-4 sm:justify-center">
 					{[ `https://owo.whats-th.is/4c2J1EH.png`, `https://owo.whats-th.is/8X4rRPb.png`,
 					`https://owo.whats-th.is/DSsroGt.png`, ].map((v, i) => (
-					<div class="relative aspect-video h-64">
+					<div class="relative aspect-video h-40 sm:h-64">
 						<img src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
-							class="h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+							class="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
 					</div>
 					))}
 				</div>

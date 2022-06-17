@@ -2,12 +2,9 @@
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa/index.esm'
 ---
 
-<footer
-  id="footer"
-  class="dark relative z-0 mx-auto h-screen bg-[#141517] overflow-hidden transition duration-100"
-  aria-labelledby="footerHeading"
-  data-cursor="-footer"
->
+<footer id="footer"
+  class="dark relative z-0 mx-auto h-screen bg-[#141517] dark:bg-black overflow-hidden transition duration-100"
+  aria-labelledby="footerHeading" data-cursor="-footer">
   <div data-scroll data-scroll-speed="-4" id="footer-content" class="h-screen ">
     {` `}
     <h2 id="footerHeading" class="sr-only">Footer</h2>
@@ -24,35 +21,23 @@ import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa/index.esm'
       </div>
     </div>
     <div
-      class="absolute bottom-8 left-0 right-0 mx-auto w-full max-w-7xl px-6 py-8 no-underline sm:px-16 md:flex md:items-center md:justify-between"
-    >
+      class="absolute bottom-8 left-0 right-0 mx-auto w-full max-w-7xl px-6 py-8 no-underline sm:px-16 md:flex md:items-center md:justify-between">
       <div class="flex space-x-6 md:order-2">
-        <a
-          href="https://twitter.com/iojcde"
-          class="text-gray-600 dark:text-gray-400"
-        >
+        <a href="https://twitter.com/iojcde" class="text-gray-600 dark:text-gray-400">
           <FaTwitter size="24" />
         </a>
 
-        <a
-          href="https://github.com/iojcde"
-          class="text-gray-600 dark:text-gray-400"
-        >
+        <a href="https://github.com/iojcde" class="text-gray-600 dark:text-gray-400">
           <span class="sr-only">GitHub</span>
           <FaGithub size="24" />
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/jcdea/"
-          class="text-gray-600 dark:text-gray-400"
-        >
+        <a href="https://www.linkedin.com/in/jcdea/" class="text-gray-600 dark:text-gray-400">
           <span class="sr-only">LinkedIn</span>
           <FaLinkedin size="24" />
         </a>
       </div>
-      <p
-        class="mt-8 text-lg text-gray-600 dark:text-gray-400 md:order-1 md:mt-0"
-      >
+      <p class="mt-8 text-sm text-gray-600 dark:text-gray-400 md:order-1 md:mt-0">
         &copy; {new Date().getFullYear()} Jeeho Ahn. All rights reserved.
       </p>
     </div>

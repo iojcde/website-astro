@@ -1,10 +1,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import initSmoothScroll from './utils/initSmoothScroll'
 import Magnetic from './utils/magnetic'
 gsap.registerPlugin(ScrollTrigger)
-
-initSmoothScroll()
 
 new Magnetic(document.querySelector(`.round-button-text`), {
   x: 0.2,

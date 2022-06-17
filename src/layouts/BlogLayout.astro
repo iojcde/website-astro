@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+const { content: post } = Astro.props;
+---
+
+<head>
+  <!-- Add other Head elements here, like styles and meta tags. -->
+  <title>{post.title}</title>
+</head>
+
+<Layout>
+  <!-- Add other UI components here, like common headers and footers. -->
+
+  <!-- 2. Rendered HTML will be passed into the default slot. -->
+  <article class="container mt-8">
+    <h1 class="mb-4 text-3xl font-bold capitalize tracking-tight text-black  dark:text-white md:text-5xl">
+      {post.title}
+    </h1>
+    <div class="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
+      <div class="flex items-center">
+        <img alt="Profile" height={24} width={24} src="https://avatars.githubusercontent.com/u/31413538?v=4"
+          class="rounded-full" />
+        <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+          {`Jeeho Ahn / ` + post.date}
+
+        </p>
+      </div>
+
+
+
+    </div>
+    <div class="apply-prose mt-4 mb-8 w-full max-w-none">
+      <slot />
+    </div>
+    <a href="/blog">
+      <span class="tracking-[0]">&lt;-</span>
+      {` `}
+      Back to list
+    </a>
+  </article>
+
+
+</Layout>

@@ -1,10 +1,11 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
+import initSmoothScroll from './utils/initSmoothScroll'
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
-import Magnetic from './utils/magnetic'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const scroll = initSmoothScroll()
 
 if (!window.matchMedia(`(pointer: coarse)`).matches) {
   MouseFollower.registerGSAP(gsap)
@@ -15,14 +16,16 @@ if (!window.matchMedia(`(pointer: coarse)`).matches) {
         '-hidden': `iframe`,
       },
     })
-}
 
-new Magnetic(document.getElementById(`burger`), {
-  x: 0.08,
-  y: 0.08,
-  s: 0.2,
-  rs: 0.7,
-})
+  import(`./utils/magnetic`).then(({ Magnetic }) => {
+    new Magnetic(document.getElementById(`burger`), {
+      x: 0.08,
+      y: 0.08,
+      s: 0.2,
+      rs: 0.7,
+    })
+  })
+}
 
 gsap.utils
   .toArray(`.fade-in-section`)
@@ -61,11 +64,13 @@ gsap.fromTo(
 )
 
 const toggleMenu = () => {
-  const menu = document.querySelector(`#menu`)
-  const overlay = document.querySelector(`#overlay`)
-
-  menu.classList.toggle(`active`)
-  overlay.classList.toggle(`active`)
+  const html = document.querySelector(`html`)
+  html.classList.toggle(`menu-open`)
+  if (html.classList.contains(`menu-open`)) {
+    document.body.style.overflow = `hidden`
+  } else {
+    document.body.style.overflow = ``
+  }
 }
 
 const button = document.getElementById(`nav-button`)
