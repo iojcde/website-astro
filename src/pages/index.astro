@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 <script type="module" src="/src/scripts/index.ts" />
 
 <Layout>
-	<main>
+	<main data-barba="container" data-barba-namespace="home">
 		<div class="hero-gradient px-4 sm:px-10 h-[90vh] flex flex-col justify-between">
 			<div class="float-right flex  w-full max-w-7xl rounded-sm">
 				<div class="mt-12 sm:mt-32   pb-8 lg:px-20">
@@ -65,19 +65,23 @@ import Layout from '../layouts/Layout.astro';
 
 
 		<div id="skills-container" class="relative fade-in-section z-0 my-32 py-16 text-white bg-[#141517] dark:bg-black "
-			data-scroll data-scroll-speed="1" data-cursor="-opaque">
+			data-cursor="-opaque">
 			<h2 class="text-5xl fade-in container leading-tight lg:text-6xl">Skills</h2>
 
-			<div class="scrub-section fade-in w-full leading-none mt-8">
-				<div class="wrapper flex w-full whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">
+			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="4"
+				class="scrub-section mt-8 mb-4 fade-in w-full leading-none">
+				<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
+
 					TypeScript •
-					JavaScript • Go • Rust • Python</div>
+					JavaScript • Go • Rust • Python •{` `}</div>
 			</div>
+
 			<!-- <hr class="my-4 mx-auto h-1 max-w-6xl border-none bg-black px-4 font-medium dark:bg-white lg:px-8" /> -->
-			<div class="scrub-section fade-in w-full leading-none">
-				<div class="wrapper flex whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
+			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-4"
+				class="scrub-section-inverse fade-in w-full leading-none">
+				<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
 					Next.js •
-					Linux • Docker • Ansible • GraphQL</div>
+					Linux • Docker • Ansible • GraphQL •{` `}</div>
 			</div>
 			<div class="grid fade-in sm:grid-cols-2 container mt-16">
 				<ul class="flex flex-col gap-1 text-xl">

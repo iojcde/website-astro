@@ -2,10 +2,34 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import initSmoothScroll from './utils/initSmoothScroll'
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
+import barba from '@barba/core'
+
+const scroll = initSmoothScroll()
 
 gsap.registerPlugin(ScrollTrigger)
 
-const scroll = initSmoothScroll()
+// update the scroll after entering a page
+barba.hooks.after(() => {
+  scroll.update()
+})
+
+barba.init({
+  transitions: [
+    {
+      name: `default`,
+      leave(data) {
+        gsap.to(data.current.container, {
+          opacity: 0,
+        })
+      },
+      enter(data) {
+        gsap.from(data.next.container, {
+          opacity: 0,
+        })
+      },
+    },
+  ],
+})
 
 if (!window.matchMedia(`(pointer: coarse)`).matches) {
   MouseFollower.registerGSAP(gsap)

@@ -20,7 +20,7 @@ let firstPage = allPosts.slice(0, 2);
 ---
 
 <Layout>
-	<main class="container mt-8">
+	<main class="container mt-8" data-barba="container" data-barba-namespace="blog">
 		<h1 class="text-5xl sm:text-6xl mb-6 sm:mb-16">Blog</h1>
 		<div> {allPosts.map((post) =>
 			<PostPreview post={post} />)}
