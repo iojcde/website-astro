@@ -8,29 +8,6 @@ const scroll = initSmoothScroll()
 
 gsap.registerPlugin(ScrollTrigger)
 
-// update the scroll after entering a page
-barba.hooks.after(() => {
-  scroll.update()
-})
-
-barba.init({
-  transitions: [
-    {
-      name: `default`,
-      leave(data) {
-        gsap.to(data.current.container, {
-          opacity: 0,
-        })
-      },
-      enter(data) {
-        gsap.from(data.next.container, {
-          opacity: 0,
-        })
-      },
-    },
-  ],
-})
-
 if (!window.matchMedia(`(pointer: coarse)`).matches) {
   MouseFollower.registerGSAP(gsap)
   document.getElementsByClassName(`mf-cursor`).length == 0 &&
