@@ -10,6 +10,7 @@ const initSmoothScroll = () => {
     smooth: true,
     reloadOnContextChange: true,
     tablet: { smooth: true },
+    mobile: { smooth: false },
   })
 
   window.onresize = scroll.update()

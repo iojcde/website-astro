@@ -2,7 +2,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import initSmoothScroll from './utils/initSmoothScroll'
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
-import barba from '@barba/core'
 
 const scroll = initSmoothScroll()
 
