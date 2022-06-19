@@ -63,8 +63,8 @@ new Magnetic(document.querySelector(`.round-button-text`), {
 
 let direction = 1 // 1 = forward, -1 = backward scroll
 
-const roll1 = roll(`.scrub-section .wrapper`, { duration: 24 }, false),
-  roll2 = roll(`.scrub-section-inverse .wrapper`, { duration: 24 }, true),
+const roll1 = roll(`.scrub-section .wrapper`, { duration: 26 }, false),
+  roll2 = roll(`.scrub-section-inverse .wrapper`, { duration: 26 }, true),
   scroll = ScrollTrigger.create({
     trigger: document.querySelector(`[data-scroll-container]`),
     onUpdate(self) {

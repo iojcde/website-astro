@@ -27,41 +27,46 @@ if (!window.matchMedia(`(pointer: coarse)`).matches) {
   })
 }
 
-gsap.utils
-  .toArray(`.fade-in-section`)
-  .forEach((section: HTMLElement, index) => {
-    const w = section.querySelectorAll(`.fade-in`)
+const initAnimations = () => {
+  gsap.utils
+    .toArray(`.fade-in-section`)
+    .forEach((section: HTMLElement, index) => {
+      const w = section.querySelectorAll(`.fade-in`)
 
-    gsap.fromTo(
-      w,
-      { opacity: 0, y: 75 },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: { trigger: section, start: `top 90%` },
-        stagger: 0.08,
-        duration: 0.6,
-        delay: 0.2,
-        ease: `power2.out`,
-      },
-    )
-  })
+      gsap.fromTo(
+        w,
+        { opacity: 0, y: 75 },
+        {
+          opacity: 1,
+          y: 0,
+          scrollTrigger: { trigger: section, start: `top 90%` },
+          stagger: 0.08,
+          duration: 0.6,
+          delay: 0.2,
+          ease: `power2.out`,
+        },
+      )
+    })
 
-gsap.fromTo(
-  `#burger span`,
-  {
-    className: `burger`,
-  },
-  {
-    scrollTrigger: {
-      trigger: `main`,
-      start: `bottom top`,
-      scrub: true,
+  gsap.fromTo(
+    `#burger span`,
+    {
+      className: `burger`,
     },
-    className: `burger-dark`,
-    ease: `none`,
-  },
-)
+    {
+      scrollTrigger: {
+        trigger: `main`,
+        start: `bottom top`,
+        scrub: true,
+      },
+      className: `burger-dark`,
+      ease: `none`,
+    },
+  )
+}
+if (window.matchMedia(``).matches) {
+  initAnimations()
+}
 
 const toggleMenu = () => {
   const html = document.querySelector(`html`)

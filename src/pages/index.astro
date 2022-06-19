@@ -6,11 +6,12 @@ import Layout from '../layouts/Layout.astro';
 <script src="/src/scripts/index.ts" />
 
 <Layout>
-	<main data-barba="container" data-barba-namespace="home">
+	<main>
 		<div class="hero-gradient px-4 sm:px-10 h-[90vh] flex flex-col justify-between">
 			<div class="float-right flex  w-full max-w-7xl rounded-sm">
 				<div class="mt-12 sm:mt-32   pb-8 lg:px-20">
-					<h1 id="hero-text" class="text-6xl leading-tight dark:text-white sm:text-7xl xl:text-8xl">Full-stack
+					<h1 data-scroll data-scroll-speed="1" data-scroll-delay="0.05" id="hero-text"
+						class="text-6xl leading-tight dark:text-white sm:text-7xl xl:text-8xl">Full-stack
 						Developer
 						& Designer based in Seoul.</h1>
 					<h2 class="mt-6 flex font-mono text-">
@@ -24,9 +25,14 @@ import Layout from '../layouts/Layout.astro';
 
 		<div id="details" class="relative text-3xl md:text-5xl z-20 mx-auto mt-20 w-full container fade-in-section">
 
-			<div class="fade-in">I'm a developer skilled in Go, React, and more.</div>
-			<div class="fade-in">I'm also a designer who specializes in web design </div>
-			<div class="fade-in mb-40">and UI/UX.</div>
+			<div data-scroll data-scroll-speed="1" data-scroll-delay="0.05">
+				<span class="fade-in">I'm a developer skilled in Go, React, and more.</span>
+			</div>
+			<div data-scroll data-scroll-speed="1" data-scroll-delay="0.05">
+				<span class="fade-in">I'm also a designer who
+					specializes in web design </span>
+			</div>
+			<div class="fade-in mb-40" data-scroll data-scroll-speed="1" data-scroll-delay="0.05">and UI/UX.</div>
 
 			<hr class="p-4 seperator" />
 			<RoundButton class="absolute bottom-0 right-16 sm:right-32" href="/about">Learn more </RoundButton>
@@ -65,24 +71,23 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 
-		<div id="skills-container" class="relative fade-in-section z-0 my-32 py-16 text-white bg-[#141517] dark:bg-black "
+		<div id="skills-container" class="sticky fade-in-section z-0 my-32 py-16 text-white bg-[#141517] dark:bg-black "
 			data-cursor="-opaque">
 			<h2 class="text-5xl fade-in container leading-tight lg:text-6xl">Skills</h2>
 
-			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="4"
+			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="6"
 				class="scrub-section relative mt-8 mb-4 fade-in w-full leading-none">
 				<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
-
-					TypeScript •
-					JavaScript • Go • Rust • Python •{` `}</div>
+					Next.js • TypeScript • JavaScript • Astro • Linux • Git
+					•{` `}</div>
 			</div>
 
 			<!-- <hr class="my-4 mx-auto h-1 max-w-6xl border-none bg-black px-4 font-medium dark:bg-white lg:px-8" /> -->
-			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-4"
+			<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-6"
 				class="scrub-section-inverse relative fade-in w-full leading-none">
-				<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React • TailwindCSS •
-					Next.js •
-					Linux • Docker • Ansible • GraphQL •{` `}</div>
+				<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">
+					Go • Rust • Python • Docker • Ansible • gRPC • GraphQL • Kubernetes •
+					{` `}</div>
 			</div>
 			<div class="grid fade-in sm:grid-cols-2 container mt-16">
 				<ul class="flex flex-col gap-1 text-xl">
