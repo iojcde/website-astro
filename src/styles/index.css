@@ -6,7 +6,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-white overflow-scroll pc:overflow-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
+  @apply bg-white overflow-scroll sm:overflow-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
 }
 
 .has-scroll-smooth div[data-scroll-container] {
@@ -232,7 +232,8 @@ a.no-underline:hover {
 }
 
 .seperator {
-  @apply mx-auto mt-16 max-w-6xl border-gray-700 dark:border-gray-300;
+  @apply mx-auto mt-16 w-full max-w-6xl border-gray-700 dark:border-gray-300;
+  padding:inherit;
 }
 
 .apply-prose {
