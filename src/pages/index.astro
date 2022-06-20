@@ -1,6 +1,7 @@
 ---
 import RoundButton from '../components/RoundButton.astro';
 import Layout from '../layouts/Layout.astro';
+import Image from '../components/Image.astro';
 ---
 
 <script src="/src/scripts/index.ts" />
@@ -127,8 +128,7 @@ import Layout from '../layouts/Layout.astro';
 					{[ `https://owo.whats-th.is/APDfJDz.png`, `https://owo.whats-th.is/5jnX5Vc.png`,
 					`https://owo.whats-th.is/8ULhpLf.png`, ].map((v, i) => (
 					<div class="relative aspect-video h-40 sm:h-64">
-						<img src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
-							class="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100" />
+						<Image src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more" 		className="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
 					</div>
 					))}
 				</div>
@@ -138,8 +138,8 @@ import Layout from '../layouts/Layout.astro';
 					{[ `https://owo.whats-th.is/4c2J1EH.png`, `https://owo.whats-th.is/8X4rRPb.png`,
 					`https://owo.whats-th.is/DSsroGt.png`, ].map((v, i) => (
 					<div class="relative aspect-video h-40 sm:h-64">
-						<img src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
-							class="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+						<Image src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
+							className="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
 					</div>
 					))}
 				</div>

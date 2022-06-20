@@ -138,6 +138,14 @@ a.no-underline:hover {
   left: -20px;
   bottom: -20px;
 }
+@media (min-width:1024px){
+  #burger:hover:before{
+      top:-80px;
+      right:-80px;
+      left:-80px;
+      bottom:-80px
+  }
+}
 
 #burger:after {
   content: '';
