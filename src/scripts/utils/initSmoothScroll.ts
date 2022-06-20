@@ -1,16 +1,15 @@
 import gsap from 'gsap'
-import LocomotiveScroll from 'locomotive-scroll'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const initSmoothScroll = () => {
+const initSmoothScroll = async () => {
+  const { default: LocomotiveScroll } = await import(`locomotive-scroll`)
+
   const scroll = new LocomotiveScroll({
     el: document.querySelector(`[data-scroll-container]`),
     smooth: true,
-    reloadOnContextChange: true,
-    tablet: { smooth: true },
-    mobile: { smooth: false },
+    tablet: { breakpoint: 0 },
   })
 
   window.onresize = scroll.update()

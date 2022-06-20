@@ -3,7 +3,11 @@ import initSmoothScroll from './utils/initSmoothScroll'
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
 
-// const scroll = initSmoothScroll()
+document.documentElement.classList.add(`is-loaded`)
+
+if (!window.matchMedia(`pointer: coarse`).matches) {
+  await initSmoothScroll()
+}
 
 gsap.registerPlugin(ScrollTrigger)
 
