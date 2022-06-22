@@ -40,6 +40,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          'Pretendard Std',
           'Pretendard',
           '-apple-system',
           'system-ui',
