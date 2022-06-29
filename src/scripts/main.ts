@@ -1,4 +1,5 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { CustomEase } from 'gsap/CustomEase'
 import initSmoothScroll from './utils/initSmoothScroll'
 import MouseFollower from 'mouse-follower'
 import { gsap } from 'gsap'
@@ -10,6 +11,7 @@ if (!window.matchMedia(`pointer: coarse`).matches) {
 }
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(CustomEase)
 
 if (!window.matchMedia(`(pointer: coarse)`).matches) {
   MouseFollower.registerGSAP(gsap)
@@ -43,11 +45,11 @@ const initAnimations = () => {
         {
           opacity: 1,
           y: 0,
-          scrollTrigger: { trigger: section, start: `top 90%` },
-          stagger: 0.08,
+          scrollTrigger: { trigger: section, start: `top 80%` },
+          stagger: 0.06,
           duration: 0.6,
-          delay: 0.2,
-          ease: `power2.out`,
+          delay: 0.1,
+          ease: gsap.parseEase(`.22,.61,.35,1`),
         },
       )
     })

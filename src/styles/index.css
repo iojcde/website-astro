@@ -6,6 +6,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: normal;
+  font-feature-settings: 'calt';
   @apply bg-white overflow-scroll sm:overflow-hidden transition duration-200  dark:bg-[#141517] text-[#141517] dark:text-white;
 }
 
@@ -61,12 +63,12 @@ a.no-underline:hover {
   left: 0;
 }
 
-.hero-gradient {
+/* .hero-gradient {
   background-size: cover;
   background-position: 60% 20%;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 3000 2000' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3CradialGradient id='grad0' cx='86%25' cy='90%25' r='100%25' fx='86%25' fy='90%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(244,102,102,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(244,102,102,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad1' cx='63%25' cy='84%25' r='100%25' fx='63%25' fy='84%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(74,111,247,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(74,111,247,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad2' cx='35%25' cy='57%25' r='100%25' fx='35%25' fy='57%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(11,249,225,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(11,249,225,0)' stop-opacity='0' /%3E%3C/radialGradient%3E , %3CradialGradient id='grad3' cx='7%25' cy='86%25' r='100%25' fx='7%25' fy='86%25' gradientUnits='objectBoundingBox'%3E%3Cstop offset='0' stop-color='rgba(103,244,201,1)' stop-opacity='1' /%3E%3Cstop offset='0.5' stop-color='rgba(103,244,201,0)' stop-opacity='0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect x='0' y='0' width='3000' height='2000' fill='none' /%3E%3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad0)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad1)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad2)' /%3E , %3Crect x='0' y='0' width='3000' height='2000' fill='url(%23grad3)' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
-}
+} */
 
 .span-lines.animate .span-line .span-line-inner {
   position: relative;

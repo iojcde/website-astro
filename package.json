@@ -30,7 +30,7 @@
     "@barba/core": "^2.9.7",
     "@tailwindcss/typography": "^0.5.2",
     "date-fns": "^2.28.0",
-    "gsap": "^3.10.4",
+    "gsap": "file:gsap-bonus.tgz",
     "html-minifier-terser": "^7.0.0-beta.0",
     "locomotive-scroll": "^4.1.4",
     "mouse-follower": "^1.1.2",

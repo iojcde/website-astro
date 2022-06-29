@@ -54,23 +54,17 @@ const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-std.css" />
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-std.css" />
-
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
 
     <script is:inline>
-        // The configured mode is stored in local storage
         const isDarkMode = localStorage.getItem('darkMode');
-
-        // Set theme to 'dark' if darkMode = 'true'
-
         let theme = isDarkMode === 'true' ? 'dark' : '';
         if (!isDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches) {
             theme = 'dark'
         }
-
-        // Put dark class on html tag to enable dark mode
         document.querySelector("html").className = theme;
-
     </script>
 </head>
 
