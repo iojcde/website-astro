@@ -1,0 +1,28 @@
+---
+export interface Props {
+	post: any;
+}
+const { post } = Astro.props;
+const { frontmatter } = post;
+
+function formatDate(date) {
+	return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
+}
+---
+
+<a class="w-full no-underline" href={post.url}>
+	<div class="mb-12 w-full rounded-lg border  border-slate-200 pb-2 transition hover:shadow dark:border-slate-800">
+		<img src={ `https://res.cloudinary.com/jcdea/` + frontmatter.image.slice(frontmatter.image.lastIndexOf(`/`) + 1) }
+			alt="banner image" width="1200" height="400" class="rounded-t-lg aspect-[2/1] max-h-96 object-cover object-top" />
+		<div class="p-5 pt-2 lg:p-8 lg:pt-4 ">
+			<div class=" flex flex-col justify-between md:flex-row">
+				<h2 class="mb-2 w-full text-2xl font-semibold capitalize text-gray-900 dark:text-gray-100 md:text-3xl">
+					{frontmatter.title}
+				</h2>
+			</div>
+			<p class="ap apply-prose text-gray-600 dark:text-gray-300">
+				{frontmatter.description}
+			</p>
+		</div>
+	</div>
+</a>

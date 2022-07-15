@@ -1,0 +1,35 @@
+---
+import RoundButton from '../components/RoundButton.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main class="container text-center" data-barba="container" data-barba-namespace="404">
+
+    <img width="276" height="60" src="/images/404text.png" class="animation-flicker mx-auto mt-4 text-pink-500" />
+
+
+    <h1 class="text-6xl font-semibold lg:text-7xl">
+      You hit a dead end.
+    </h1>
+    <p class="my-5 mt-6 text-xl lg:text-2xl">Here's a BLÅHAJ to guide you back.</p>
+    <img class="mx-auto rounded-lg object-cover h-96" alt="" src="/images/blahaj.jpg" />
+
+    <div class="mx-auto mt-8 mb-8 flex justify-center">
+      <button onclick="window.history.back()"
+        class="mx-3 w-44 items-center rounded-full bg-[#F10E5A] px-8 py-1 text-lg font-semibold text-white ">
+        Go back
+      </button>
+      <a href="https://www.ikea.com/us/en/p/blahaj-soft-toy-shark-90373590/">
+        <a class="mx-3 inline-flex w-44 items-center rounded-full bg-yellow-500 px-8 py-1  font-semibold text-white ">
+          <span class="mx-auto">Get a BLÅHAJ</span>
+        </a>
+      </a>
+    </div>
+
+    <a href="https://twitter.com/niichi021" class="pt-4 text-sm text-gray-700 dark:text-gray-300">
+      (image sauce)
+    </a>
+  </main>
+
+</Layout>

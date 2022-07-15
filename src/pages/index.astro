@@ -1,0 +1,153 @@
+---
+import RoundButton from '../components/RoundButton.astro';
+import Layout from '../layouts/Layout.astro';
+import Image from '../components/Image.astro';
+
+const designLinks = ["https://github.com/iojcde/teardrop", "https://github.com/iojcde/wordjang", "https://github.com/iojcde/wordjang"]
+---
+
+<script src="/src/scripts/index.ts" />
+
+<Layout>
+	<main>
+		<div
+			class="hero-gradient px-6 lg:px-14 h-[90vh] border-b  border-dashed border-gray-600  flex flex-col justify-between">
+			<div class="mt-12 sm:mt-32 pb-8 lg:px-8">
+				<h1 id="hero-text" class="max-w-7xl text-6xl leading-tight dark:text-white sm:text-7xl xl:text-8xl">Full-stack
+					Developer
+					& Designer based in Seoul.</h1>
+				<h2 class="mt-6 flex pl-2 font-mono text-">
+					Portfolio of Jeeho Ahn{` `}
+					<span
+						class="my-auto ml-4 inline-block h-0 w-20  transition duration-200 border-b-2 border-black dark:border-gray-100"></span>
+				</h2>
+			</div>
+		</div>
+
+		<div id="details" class="relative text-3xl md:text-5xl mt-20 z-20 mx-auto w-full container fade-in-section">
+
+			<div class="fade-in">
+				I'm a developer skilled in Go, React, and more.
+			</div>
+			<div class="fade-in">
+				I'm also a designer who
+				specializes in web design
+			</div>
+			<div class="fade-in mb-40">and UI/UX.</div>
+		</div>
+		<div class="relative container">
+			<hr class="seperator p-6" />
+			<RoundButton class="absolute bottom-0 right-16 sm:right-48" href="/about">Learn more </RoundButton>
+
+		</div>
+
+
+
+		<div id="skills-container" class="sticky  z-0 my-16 sm:my-32 py-16 text-white bg-[#141517] dark:bg-black "
+			data-cursor="-opaque">
+			<div class="fade-in-section">
+				<h2 class="text-5xl container fade-in leading-tight lg:text-6xl">Skills</h2>
+
+				<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="6"
+					class="scrub-section fade-in relative mt-8 mb-4 w-full leading-none">
+					<div class="wrapper inline-block  whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">React •
+						TailwindCSS •
+						Next.js • TypeScript • JavaScript • Astro • Linux • Git
+						•{` `}</div>
+				</div>
+
+				<!-- <hr class="my-4 mx-auto h-1 max-w-6xl border-none bg-black px-4 font-medium dark:bg-white lg:px-8" /> -->
+				<div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-6"
+					class="scrub-section-inverse  fade-in relative w-full leading-none">
+					<div class="wrapper inline-block whitespace-nowrap text-5xl sm:text-6xl md:text-9xl">
+						Go • Rust • Python • Docker • Ansible • gRPC • GraphQL • Kubernetes •
+						{` `}</div>
+				</div>
+			</div>
+
+			<div class="grid fade-in-section sm:grid-cols-2 container mt-16">
+				<ul class="flex flex-col gap-1 text-xl">
+					<li class="fade-in">Go</li>
+					<li class="fade-in">TypeScript</li>
+					<li class="fade-in">JavaScript</li>
+					<li class="fade-in">Next.js</li>
+					<li class="fade-in">TailiwndCSS</li>
+					<li class="fade-in">React</li>
+				</ul>
+				<ul class="flex flex-col gap-1 text-xl">
+					<li class="fade-in">Rust</li>
+					<li class="fade-in">Python</li>
+					<li class="fade-in">
+						Linux{` `}
+						<span class="text-gray-500 line-through"> (I use arch btw) </span>
+					</li>
+					<li class="fade-in">Docker</li>
+					<li class="fade-in">GraphQL</li>
+					<li class="fade-in">Kubernetes</li>
+					<li class="fade-in">...more</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class=" container mt-16 fade-in-section">
+			<h4 class="fade-in text-4xl leading-tight lg:text-6xl">Experience</h4>
+			<div class="prose dark:prose-invert prose-xl">
+				<ul>
+					<li class="fade-in">Seoul National University Science Education Institue for Gifted</li>
+					<li class="fade-in">Seoul National University of Education Software Gifted Education Center</li>
+					<li class="fade-in">Samsung Junior SW Cup Finalist</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<hr class="p-6 seperator" />
+
+		<div class=" container fade-in-section">
+			<h4 class="fade-in text-4xl leading-tight lg:text-6xl">Work</h4>
+			<div class="prose dark:prose-invert prose-xl">
+				<ul>
+					<li class="fade-in"><a href="https://fosshost.org">Fosshost</a> - TechOps Volunteer</li>
+					<li class="fade-in"><a href="https://vignetteapp.org">Vignette</a> - Core Developer & Community Moderator</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<hr class="p-6 seperator" />
+
+		<div id="designs" class="mt-16 fade-in-section lg:mt-32 w-full">
+			<h2 class="container px-4 text-5xl lg:text-6xl fade-in">Designs &darr;</h2>
+
+			<div class="mt-8 w-full overflow-scroll fade-in leading-none sm:overflow-hidden px-4">
+				<a data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal"
+					class="flex gap-4 sm:justify-center no-underline" href="https://vignetteapp.org">
+					{[ `https://owo.whats-th.is/4c2J1EH.png`, `https://owo.whats-th.is/8X4rRPb.png`,
+					`https://owo.whats-th.is/DSsroGt.png`, ].map((v, i) => (
+					<div class="relative aspect-video h-40 sm:h-64 fade-in">
+						<Image src={v} alt="" loading="lazy" width={800} height={600} data-cursor-text="See more"
+							className="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+					</div>
+					))}
+				</a>
+			</div>
+
+			<div class="mt-4 w-full overflow-x-scroll leading-none sm:overflow-hidden px-4">
+				<div data-scroll data-scroll-speed="1" data-scroll-direction="horizontal" class="flex gap-4 sm:justify-center">
+					{[ `https://owo.whats-th.is/APDfJDz.png`, `https://owo.whats-th.is/5jnX5Vc.png`,
+					`https://owo.whats-th.is/8ULhpLf.png`, ].map((v, i) => (
+					<a class="relative aspect-video h-40 no-underline sm:h-64 fade-in" href={designLinks[i]}>
+						<Image src={v} alt="" width={800} height={600} loading="lazy" data-cursor-text="See more"
+							className="h-40 sm:h-64 rounded border object-cover object-top transition duration-200 dark:brightness-90 dark:hover:brightness-100 lg:h-64" />
+					</a>
+					))}
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+</Layout>

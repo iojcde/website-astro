@@ -1,0 +1,128 @@
+---
+import Footer from "../components/Footer.astro";
+import Menu from "../components/Menu.astro";
+import Nav from "../components/Nav.astro";
+import '../styles/cursor.css'
+import '../styles/index.css'
+import '../styles/locomotive.css'
+
+export interface Props {
+    title?: string,
+    ogURL?: string,
+    ogtitle?: string,
+    ogdesc?: string,
+    ogimg?: string,
+    noNav?: boolean
+}
+
+const { title, ogURL, ogtitle, ogdesc, ogimg, noNav } = Astro.props as Props;
+const namespace = Astro.canonicalURL.pathname
+---
+
+<script src="/src/scripts/main.ts" />
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title ? title : "Jeeho Ahn - Portfolio"}</title>
+
+    <meta name="description" content={ogdesc}>
+    <link rel="canonical" href={Astro.canonicalURL.href} />
+
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:site_name" content="Jeeho Ahn - Portfolio" />
+    <meta property="og:url" content={ogURL}>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={ogtitle || `Jeeho Ahn - Portfolio`}>
+    <meta property="og:description" content={ogdesc||`Student, Full Stack Developer, Open Source enthusaist.`}>
+    <meta property="og:image" content={ogimg||``}>
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="jcde.xyz">
+    <meta property="twitter:url" content={Astro.canonicalURL.href}>
+    <meta name="twitter:title" content={ogtitle||"Jeeho Ahn - Portfolio"}>
+    <meta name="twitter:description" {ogdesc||`Student, Full Stack Developer, Open Source enthusaist.`}>
+    <meta name="twitter:image" content={ogimg||''}>
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+    <link rel="preload" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-std.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-std.css" />
+
+
+    <script is:inline>
+        const isDarkMode = localStorage.getItem('darkMode');
+        let theme = isDarkMode === 'true' ? 'dark' : '';
+        if (!isDarkMode && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            theme = 'dark'
+        }
+        document.querySelector("html").className = theme;
+    </script>
+</head>
+
+<a href="#content"
+    class="text-md absolute bg-white dark:bg-black -top-8 ml-3 -translate-y-12 transform rounded-md border border-gray-300 px-3 py-1 transition-transform duration-200 focus:translate-y-12 lg:ml-8">
+    Skip to content
+</a>
+
+<body>
+    <!-- <div id="swup"
+        class="transition-slide h-screen w-screen fixed z-[400] justify-center flex items-center opacity-100 bg-black text-white"> -->
+    <!-- <span>Loading...</span></div> -->
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace={namespace}>
+            <div data-scroll-container>
+
+                {!noNav&&
+                <Nav />}
+                <div class="relative z-10 w-full overflow-clip min-h-screen transition duration-200  pb-24 dark:text-gray-100"
+                    id="content">
+                    <slot />
+                </div>
+
+                <Footer />
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <Menu></Menu>
+</body>
+
+
+</html>
+
+<style lang="postcss">
+    a {
+        cursor: pointer;
+        line-height: 2.5em;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border .2s;
+    }
+
+    a:hover {
+        border-bottom: 1px solid #000000;
+    }
+
+    .dark a:hover {
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+    .no-underline a:hover {
+        border-bottom: 1px solid transparent;
+    }
+
+    a:hover.no-underline {
+        border-bottom: 1px solid transparent;
+    }
+</style>

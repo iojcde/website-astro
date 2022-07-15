@@ -1,0 +1,24 @@
+---
+import { HiMoon, HiSun } from 'react-icons/hi/index.esm'
+---
+
+<nav class="my-0 flex w-full items-center font-mono justify-center py-4 sm:pb-6 sm:pt-8 px-6 transition duration-200 lg:px-14">
+  <div class="flex w-full items-center justify-between">
+
+    <a href="/" class="no-underline">
+      <img class="rounded-full w-8 h-8 sm:w-12 sm:h-12" src="https://avatars.githubusercontent.com/u/31413538?v=4" />
+    </a>
+    <div class="text-primary flex items-baseline pr-14  dark:text-gray-100 sm:space-x-5">
+      <button aria-label="Toggle Dark Mode" id="theme-button" type="button" class=" p-2 rounded-md sm:translate-y-1"
+        aria-hidden>
+        <span class="dark:block hidden">
+          <HiSun size="20" color="white" />
+        </span>
+        <span class="dark:hidden block">
+          <HiMoon size="20" />
+        </span>
+      </button>
+      <span class="sm:block hidden">Menu</span>
+    </div>
+  </d>
+</nav>

@@ -1,0 +1,54 @@
+---    
+import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa/index.esm';
+---
+
+<button id="overlay" class="fixed inset-0 z-40" aria-hidden="true" />
+
+<div id="menu" class={`fixed top-0 bottom-0 right-0 z-40 w-full bg-white dark:bg-[#141517] sm:max-w-[50vh]
+    lg:max-w-[30vw] px-8 `}>
+
+
+    <div class="nav-row flex w-1/2 flex-col mt-8  gap-8 py-16 text-4xl" data-cursor="-opaque">
+        <a href="/">
+            Home </a>
+
+        <a href="/about">
+            About</a>
+
+
+        <a href="/blog">
+            Blog</a>
+
+
+        <a href="/fun">
+            Fun
+        </a>
+    </div>
+    <div
+        class="absolute bottom-4 left-0 right-0 mx-auto flex w-full items-center justify-between py-8 no-underline px-8 ">
+        <span class="font-mono">Socials &rarr;</span>
+        <div class="flex space-x-6 md:order-2">
+            <a href="https://twitter.com/iojcde" class="text-gray-600 dark:text-gray-400">
+                <FaTwitter size="24" />
+            </a>
+
+            <a href="https://github.com/iojcde" class="text-gray-600 dark:text-gray-400">
+                <span class="sr-only">GitHub</span>
+                <FaGithub size="24" />
+            </a>
+
+            <a href="https://www.linkedin.com/in/jcdea/" class="text-gray-600 dark:text-gray-400">
+                <span class="sr-only">LinkedIn</span>
+                <FaLinkedin size="24" />
+            </a>
+        </div>
+    </div>
+</div>
+<button id="nav-button" class="group fixed top-6 right-6 z-[251] flex items-center justify-end sm:pl-[5.5rem] outline-none
+    sm:top-[3.1rem] sm:right-6 lg:top-12 lg:right-12" id="burger-container" data-cursor="-menu"
+    data-cursor-stick="#burger">
+    <div id="burger" class="space-y-[4px] relative">
+        <span />
+        <span />
+    </div>
+</button>

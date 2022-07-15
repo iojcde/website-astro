@@ -1,0 +1,44 @@
+---
+import Pagination from "../../../components/Pagination.astro";
+import PostPreview from "../../../components/PostPreview.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+
+const { page } = Astro.props;
+
+export async function getStaticPaths({ paginate, rss }) {
+  const allPosts = await Astro.glob('../post/*.md');
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new
+    Date(a.frontmatter.date).valueOf());
+  // Generate an RSS feed from this collection of posts.
+  // NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.
+  // rss({
+  // title: 'Don’s Blog',
+  // description: 'An example blog on Astro',
+  // customData: `<language>en-us</language>`,
+  // items: sortedPosts.map(item => ({
+  // title: item.title,
+  // description: item.description,
+  // link: item.url,
+  // pubDate: item.date,
+  // })),
+  // });
+  // Return a paginated collection of paths for all posts
+  return paginate(sortedPosts, { pageSize: 4 });
+}
+---
+
+<Layout>
+  <main class="container">
+    <h2 class="title">All Posts</h2>
+
+    {page.data.map((post) =>
+    <PostPreview post={post} />)}
+
+    <div class="flex flex-col max-w-min mx-auto">
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+      <small class="mx-auto">{page.start + 1}–{page.end + 1} of {page.total}</small>
+    </div>
+
+  </main>
+</Layout>

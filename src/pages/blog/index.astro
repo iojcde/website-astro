@@ -1,0 +1,32 @@
+---
+import Pagination from '../../components/Pagination.astro';
+import PostPreview from '../../components/PostPreview.astro';
+import Layout from '../../layouts/Layout.astro'
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Don’s Blog';
+let description = 'An example blog on Astro';
+let canonicalURL = Astro.canonicalURL;
+
+// Data Fetching: List all Markdown posts in the repo.
+let allPosts = await Astro.glob('./post/*.md');
+allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+let firstPage = allPosts.slice(0, 2);
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<Layout title="Blog - Jeeho Ahn">
+	<main class="container mt-8" data-barba="container" data-barba-namespace="blog">
+		<h1 class="text-5xl sm:text-6xl mb-6 sm:mb-16">Blog</h1>
+		<div> {allPosts.map((post) =>
+			<PostPreview post={post} />)}
+		</div>
+
+		<Pagination prevUrl="/blog" nextUrl="/blog/page/2" />
+	</main>
+
+</Layout>
